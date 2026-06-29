@@ -11,6 +11,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@openpanel/web": "^1.4.1",
     "@reactflow/core": "^11.10.4",
     "clsx": "^2.1.0",
     "framer-motion": "^10.16.16",
