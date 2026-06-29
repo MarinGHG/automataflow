@@ -5,6 +5,7 @@ import { OpenPanel } from '@openpanel/web';
 // server-side only and must never be bundled into the browser.
 export const op = new OpenPanel({
   clientId: '21c8000e-b71c-4fc0-a880-8decdcd2026d',
+  apiUrl: 'https://analytics.marinbenke.dev/api',
   trackScreenViews: true,
   trackOutgoingLinks: true,
   trackAttributes: true,
