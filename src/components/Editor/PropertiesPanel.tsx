@@ -81,7 +81,19 @@ export function PropertiesPanel({ machine }: Props) {
           <select
             className="flex-1 text-xs border rounded px-1 py-0.5 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
             value={machine.type}
-            onChange={e => updateMachine(machine.id, { type: e.target.value as MachineType })}
+            onChange={e => {
+              const nextType = e.target.value as MachineType;
+              if (nextType === machine.type) return;
+              if (
+                machine.transitions.length > 0 &&
+                !window.confirm(
+                  `Changing the machine type to ${nextType} is incompatible with the existing transitions and will delete all ${machine.transitions.length} of them. Continue?`
+                )
+              ) {
+                return;
+              }
+              updateMachine(machine.id, { type: nextType, transitions: [], rejectStateId: null });
+            }}
           >
             {(['DFA', 'NFA', 'PDA', 'TM'] as const).map(t => <option key={t} value={t}>{t}</option>)}
           </select>

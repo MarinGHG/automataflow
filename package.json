@@ -1,8 +1,16 @@
 {
-  "name": "automata-studio",
+  "name": "automataflow",
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "description": "Free, browser-based automata simulator for DFA, NFA, PDA, and Turing Machines.",
+  "author": "Marin Benke",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarinGHG/automataflow"
+  },
+  "homepage": "https://automataflow.marinbenke.dev",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
